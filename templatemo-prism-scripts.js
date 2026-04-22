@@ -125,7 +125,8 @@ https://templatemo.com/tm-600-prism-flux
             item.className = 'carousel-item';
             item.dataset.index = index;
             
-            const techBadges = data.tech.map(tech => 
+            // Sécurité au cas où 'tech' est absent des données
+            const techBadges = (data.tech || []).map(tech => 
                 `<span class="tech-badge">${tech}</span>`
             ).join('');
             
@@ -466,11 +467,18 @@ https://templatemo.com/tm-600-prism-flux
             contactForm.reset();
         });
 
-        // Loading screen
-        window.addEventListener('load', () => {
+        // Gestion robuste du chargement
+        const hideLoader = () => {
             const loader = document.getElementById('loader');
             if (loader) loader.classList.add('hidden');
+        };
+
+        window.addEventListener('load', () => {
+            hideLoader();
         });
+
+        // Sécurité : Cache le loader après 5 secondes même si des ressources manquent
+        setTimeout(hideLoader, 5000);
 
         // Add parallax effect to hero section
         let scrollTimeout;
