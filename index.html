@@ -36,6 +36,44 @@ https://templatemo.com/tm-600-prism-flux
             background: rgba(255,255,255,0.12);
             transform: scale(1.01);
         }
+
+        /* Ajustements pour Tablettes et Mobiles */
+        @media (max-width: 768px) {
+            /* Ajustement de la section Hero et du Carrousel */
+            .hero {
+                padding-top: 100px;
+                min-height: 600px;
+            }
+            
+            .carousel-container {
+                height: 450px; /* Augmenter la hauteur pour éviter que les cartes ne sortent du cadre */
+            }
+
+            .card {
+                width: 280px; /* Cartes légèrement plus petites sur téléphone */
+                padding: 20px;
+            }
+
+            /* On force les grilles à passer en une seule colonne */
+            .philosophy-pillars, 
+            .stats-grid, 
+            .contact-container {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 30px;
+                padding: 0 15px;
+            }
+
+            .section-title {
+                font-size: 28px !important;
+                text-align: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
