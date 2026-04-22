@@ -12,6 +12,31 @@ TemplateMo 600 Prism Flux
 https://templatemo.com/tm-600-prism-flux
 
 -->
+    <style>
+        .stylish-select {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: white;
+            outline: none;
+            margin-top: 5px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .stylish-select:hover {
+            border-color: #bc13fe; /* accent-purple */
+            box-shadow: 0 0 15px rgba(188, 19, 254, 0.3);
+            background: rgba(255,255,255,0.08);
+        }
+        .stylish-select:focus {
+            border-color: #00f0ff; /* accent-cyan */
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+            background: rgba(255,255,255,0.12);
+            transform: scale(1.01);
+        }
+    </style>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -238,7 +263,15 @@ https://templatemo.com/tm-600-prism-flux
                 
                 <div class="form-group">
                     <label for="subject">Service souhaité</label>
-                    <input type="text" id="subject" name="subject" required>
+                    <select id="subject" name="subject" class="stylish-select" required>
+                        <option value="" disabled selected style="background: #1a0b2e;">Sélectionnez un service</option>
+                        <option value="Visibilité Google Maps & SEO Local" style="background: #1a0b2e;">Visibilité Google Maps & SEO Local</option>
+                        <option value="Création de Site Web Vitrine" style="background: #1a0b2e;">Création de Site Web Vitrine</option>
+                        <option value="E-commerce Moderne" style="background: #1a0b2e;">E-commerce Moderne</option>
+                        <option value="Application Mobile (iOS/Android)" style="background: #1a0b2e;">Application Mobile (iOS/Android)</option>
+                        <option value="Logiciel de Gestion sur mesure" style="background: #1a0b2e;">Logiciel de Gestion sur mesure</option>
+                        <option value="Audit & Stratégie Digitale" style="background: #1a0b2e;">Audit & Stratégie Digitale</option>
+                    </select>
                 </div>
                 
                 <div class="form-group">
